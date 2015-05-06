@@ -115,10 +115,10 @@ public class Video {
     private Integer pos;
     /**
      * Not available If companion ads are available, they can be listed as an array of banner objects.
-     * See Banner Object.
+     * @see Banner Object.
      */
     @Optional
-    private List<Object> companionad;
+    private List<Banner> companionad;
     /**
      * Assume None List of supported API frameworks for this impression. (See Table 6.4 API Frameworks).
      * If an API is not explicitly listed it is assumed not to be supported.

@@ -23,30 +23,32 @@ public class Impression {
 
     /**
      * A reference to a banner object. Either a banner or video object (or both if the impression could be either) must
-     * be included in an impression object. See Banner Object.
+     * be included in an impression object.
+     * @see Banner Object.
      */
-    @Required
-    private Object banner;
+    @Required("for banner impressions")
+    private Banner banner;
 
     /**
      * A reference to a video object. Either a banner or video object (or both if the impression could be either) must
-     * be included in an impression object. See Video Object.
+     * be included in an impression object.
+     * @see Video Object.
      */
-    @Required
-    private Object video;
+    @Required("for video impressions")
+    private Video video;
 
     /**
      * Name of ad mediation partner, SDK technology, or native player responsible for rendering ad (typically video or
      * mobile). Used by some ad servers to customize ad code by partner.
      */
-    @Recommended
+    @Recommended("for video and native apps")
     private String displaymanager;
 
     /**
      * Version of ad mediation partner, SDK technology, or native player responsible for rendering ad (typically video
      * or mobile). Used by some ad servers to customize ad code by partner
      */
-    @Recommended
+    @Recommended("for video and native apps")
     private String displaymanagerver;
 
     /**
@@ -66,7 +68,7 @@ public class Impression {
      * Bid floor for this impression (in CPM of bidfloorcur).
      */
     @Optional
-    private Float bidfloor;
+    private Float bidfloor = 0f;
 
     /**
      * If bid floor is specified and multiple currencies supported per bid request, then currency should be specified
@@ -74,7 +76,7 @@ public class Impression {
      * is allowed on an exchange.
      */
     @Optional
-    private String bidfloorcur;
+    private String bidfloorcur = "USD";
 
     /**
      * Flag to indicate whether the impression requires secure HTTPS URL creative assets and markup. A value of “1”
@@ -95,7 +97,7 @@ public class Impression {
      * See the PMP Object definition.
      */
     @Optional
-    private Object pmp;
+    private Pmp pmp;
 
     /**
      * This object is a placeholder that may contain custom JSON agreed to by the parties in an OpenRTB transaction to

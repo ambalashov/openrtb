@@ -24,28 +24,28 @@ public class BidRequest {
      * impression is required for a valid bid request.
      */
     @Required
-    private List<Object> imp;
+    private List<Impression> imp;
 
     /**
      * See Site Object
      */
-    @Recommended
-    private Object site;
+    @Recommended("for websites")
+    private Site site;
 
     /**
      * See App Object
      */
-    @Recommended
-    private Object app;
+    @Recommended("for native apps")
+    private App app;
 
     /**
      * See Device Object
      */
     @Recommended
-    private Object device;
+    private Device device;
 
     /**
-     * {@inheritDoc User}
+     * @see User
      */
     @Recommended
     private User user;
@@ -108,7 +108,7 @@ public class BidRequest {
      * This object is a container for any legal, governmental or industry regulations in force for the request.
      */
     @Optional
-    private Object regs;
+    private Regulations regs;
 
     /**
      * This object is a placeholder that may contain custom JSON agreed to by the parties in an OpenRTB transaction to

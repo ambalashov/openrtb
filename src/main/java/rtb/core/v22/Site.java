@@ -57,15 +57,15 @@ public class Site {
     @Optional
     private String search;
     /**
-     * See Publisher Object
+     * @see Publisher Object
      */
     @Optional
-    private Object publisher;
+    private Publisher publisher;
     /**
-     * See Content Object
+     * @see Content Object
      */
     @Optional
-    private Object content;
+    private Content content;
     /**
      * List of keywords describing this site in a comma separated string. ALTERNATE Representation: Array of strings.
      */

@@ -10,4 +10,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.FIELD)
 public @interface Required {
+    String value() default "";
 }

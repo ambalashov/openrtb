@@ -5,6 +5,15 @@ import rtb.core.Recommended;
 
 import java.util.List;
 
+/**
+ * <p>The “user” object contains information known or derived about the human user of the device.</p>
+ * <p>Note that the user ID is an exchange artifact (refer to the “device” object for hardware or
+ * platform derived IDs) and may be subject to rotation policies. However, this user ID must be
+ * stable long enough to serve reasonably as the basis for frequency capping.</p>
+ * <p>The user object itself and all of its parameters are optional, so default values are not provided.
+ * If an optional parameter is not specified, it should be considered unknown.
+ * If device ID is used as a proxy for unique user ID, use the device object.</p>
+ */
 public class User {
 
     /**
@@ -52,13 +61,13 @@ public class User {
      * see Geo Object.Error! Reference source not found.
      */
     @Optional
-    private Object geo;
+    private Geo geo;
 
     /**
      * See Data Object.
      */
     @Optional
-    private List<Object> data;
+    private List<Data> data;
 
     /**
      * This object is a placeholder that may contain custom JSON agreed to by the parties in an OpenRTB transaction
@@ -66,6 +75,5 @@ public class User {
      */
     @Optional
     private Object ext;
-
 
 }
